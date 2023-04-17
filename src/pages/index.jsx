@@ -1,23 +1,26 @@
-import Product from "@/components/Product"
-import React from "react"
+import React, { useState } from 'react'
 
-function index() {
+ function index() {
+  // let count = 0;
+  const  [count, setCount] =useState(0)
+
+  const incriment = ()=>{
+    // count += 1; worng
+    setCount(count + 1)
+  }
+
+  const decriment = ()=>{
+    // count -= 1; worng
+    setCount(count - 1)
+
+  }
   return (
     <div>
-      <h1>Hello world</h1>
-      <Product name="Google Home" description="Your AI assistant" price={59.99}/>
-
-      <Product name="Iphone 12 Pro max" description="Your AI assistant" price={1200}/>
-
-      <Product name="Macbook Pro" description=" Your Favourite Computer" price={59.99}/>
-
-
-      {/* product name,discription,price */}
-      {/* product name,discription,price */}
-      {/* product name,discription,price */}
-      {/* product name,discription,price */}
+      <h1>welcom to my counter</h1>
+      <p>The count is {count}</p>
+      <button className=' bg-black text-white text-center h-8 font-bold rounded-md w-10' onClick={decriment}>-</button>
+      <button className='bg-green-300 text-center h-8 font-bold rounded-md w-10' onClick={incriment}>+</button>
     </div>
   )
 }
-
-export default index
+export default index;
